@@ -36,6 +36,7 @@ if ( ! defined( 'AWS_CLOUDSEARCH_RP_PLUGIN_DIR' ) )
 	define( 'AWS_CLOUDSEARCH_RP_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ));
 
 require_once( AWS_CLOUDSEARCH_RP_PLUGIN_DIR . '/admin/admin.php' );
+require_once( AWS_CLOUDSEARCH_RP_PLUGIN_DIR . '/json-api/main.php' );
 add_action( 'sirp_target_option', 'aws_cloudsearch_rp_original_method_options' );
 function aws_cloudsearch_rp_original_method_options($target) {
 	echo '<label for="aws_cloudsearch_rp_original_method"><input id="aws_cloudsearch_rp_original_method" name="sirp_options[target]" type="radio" '.checked( $target, 'Aws_Cloudsearch_Simple_Related_Posts', false ).' value="Aws_Cloudsearch_Simple_Related_Posts" />' . __( 'View Related Posts based on Amazon Cloudsearch' ) . '</label>';
